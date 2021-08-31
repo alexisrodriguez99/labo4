@@ -1,0 +1,58 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+ <input type="text" [(ngModel)]="title">
+ <h4>Ingreso numeros</h4>
+  
+     edadUno: </td>
+     <input class="datos">
+    
+
+   edadDos: 
+   <input class="datos" > <input type="button" (click)="miMetodo" name="calcular" >-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <table border="1">
+      <tr> <td colspan="2"> <h4>Ingreso numeros</h4></td></tr>
+      <tr>
+        <td > edadUno: </td>
+        <td> <input  type="number" [(ngModel)]="numeroUno" ></td>
+        
+    </tr>
+    <tr>
+      <td > edadDos:  </td>
+      <td> <input  type="number" [(ngModel)]="numeroDos" > </td>
+      
+  </tr>
+  <tr> <input type="button" value="calcular" (click)="miMetodoSuma()" > 
+   <input type="button" value="limpiar" (click)="miMetodoSumaLimpiar()"> 
+  </tr>
+
+  <tr>
+    <td > suma: </td>
+    <td> <input type="text" value="{{suma}}" > </td>
+    
+</tr>
+<tr>
+  <td > promedio:  </td>
+  <td> <input  type="number" value="{{promedio}}"> </td>
+  
+</tr>
+    </table>
+
+{{title
+}}<!-- bindeo una sola via direccional   == perguntar->{{miUsuario.nombre}}
+-->
+</body>
+</html>
