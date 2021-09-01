@@ -15,7 +15,7 @@
 
    edadDos: 
    <input class="datos" > <input type="button" (click)="miMetodo" name="calcular" >-->
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -52,7 +52,56 @@
     </table>
 
 {{title
-}}<!-- bindeo una sola via direccional   == perguntar->{{miUsuario.nombre}}
--->
+}}
 </body>
-</html>
+</html>--><!-- bindeo una sola via direccional   == perguntar->{{miUsuario.nombre}}
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+
+<p>login works!</p>
+<div class="body"></div>
+		<div class="grad"></div>
+		<div class="header">
+			<div>Clase<span> 01</span></div>
+		</div>
+		<br>
+		<div class="login">
+      <table border="0">
+       
+        <tr>
+          <td ><h3> Edad Nr°1:</h3> </td>
+          <td> <input  type="number" [(ngModel)]="numeroUno" ></td>
+          
+      </tr>
+      <tr>
+        <td > <h3>Edad Nr°2:</h3>  </td>
+        <td> <input  type="number" [(ngModel)]="numeroDos" > </td>
+        
+    </tr>
+    <tr><td> <input type="button" value="Calcular" (click)="miMetodoSuma()" > </td>
+      <td>  <input type="button" value="Limpiar" (click)="miMetodoSumaLimpiar()">  </td>
+    </tr>
+  
+    <tr>
+      <td ><h3> Suma:</h3> </td>
+      <td> <input type="number" value="{{suma}}" readonly> </td>
+      
+  </tr>
+  <tr>
+    <td > <h3>Promedio: </h3> </td>
+    <td> <input  type="number" value="{{promedio}}" readonly> </td>
+    
+  </tr>
+      </table>
+		</div>
+
+
+  </body>
+  </html>
