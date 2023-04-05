@@ -1,17 +1,21 @@
 FROM node:16
 
-USER root
+# Create a new user and group
+RUN addgroup -g 1001 myappgroup && \
+    adduser -D -u 1001 -G myappgroup myappuser
 
-RUN groupadd -r nodejs && useradd -m -r -g nodejs nodejs
-
-RUN chown -R nodejs:nodejs /app
-
-USER nodejs
-
+# Set the working directory and grant permissions to the new user
+RUN mkdir -p /app && chown -R myappuser:myappgroup /app
 WORKDIR /app
 
-COPY . .
+# Switch to the new user
+USER myappuser
 
+# Copy and install dependencies
+
+# Copy the rest of the app files and expose the port
+COPY . .
 EXPOSE 3000
 
+# Start the app
 CMD ["npm", "start"]
