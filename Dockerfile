@@ -1,21 +1,16 @@
-FROM node:16
+FROM node:16.13.1-alpine3.15
 
-# Create a new user and group
-RUN addgroup -g 1001 myappgroup && \
-    adduser -D -u 1001 -G myappgroup myappuser
+RUN npm i -g npm@8.6.0
 
-# Set the working directory and grant permissions to the new user
-RUN mkdir -p /app && chown -R myappuser:myappgroup /app
-WORKDIR /app
+RUN addgroup allusers && adduser -S -G allusers username
+USER username
 
-# Switch to the new user
-USER myappuser
+WORKDIR /application
+.
+RUN npm i
 
-# Copy and install dependencies
-
-# Copy the rest of the app files and expose the port
 COPY . .
-EXPOSE 3000
 
-# Start the app
+EXPOSE 3000
 CMD ["npm", "start"]
+
